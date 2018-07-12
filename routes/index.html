@@ -73,7 +73,7 @@
               {{#if pkg.assets && pkg.assets.length}}
                 <div class="card-text">
                   {{#each pkg.assets as asset, a}}
-                    <a href="{{asset.browser_download_url}}" download class="asset {{asset.name.startsWith(device) ? '' : 'text-muted'}}">
+                    <a href="{{asset.browser_download_url}}" download class="asset {{asset.name.startsWith(device+'_') ? '' : 'text-muted'}}">
                       {{asset.name}}
                     </a>
                   {{/each}}
