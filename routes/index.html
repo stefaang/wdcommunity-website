@@ -33,11 +33,13 @@
       </form>
     </section>
 
-    <section class="docs">
-      <h2>Getting started</h2>
+    {{#if !q}}
+      <section class="docs">
+        <h2>Getting started</h2>
 
-      <p>Add <span style="user-select: all">https://dl.wdcommunity.com</span> as Package source.</p>
-    </section>
+        <p>Add <span style="user-select: all">https://dl.wdcommunity.com</span> as Package source.</p>
+      </section>
+    {{/if}}
 
     <section>
       <h2 class="mb-3">{{!filtered.length ? 'No search results' : (!q && featuredPkgs.length) ? 'Featured packages' : q ? 'Search results' : 'All packages' }}</h2>
@@ -50,7 +52,7 @@
           <div class="card mb-4">
             <div class="card-body d-flex flex-column">
               {{#if pkg.image}}
-              <img class="card-img-top" src="{{pkg.image}}" alt="Card image cap">
+              <img class="card-img-top" src="{{pkg.image}}" alt="{{pkg.name || pkg.tag_name}} logo">
               {{/if}}            
               <h5 class="card-title">
                 {{pkg.name || pkg.tag_name}}
@@ -106,8 +108,10 @@
   .card-deck {
   }
   .card-img-top {
-    padding: 10px;
+    padding: 0;
+    margin-bottom: 10px;
     height: 100px;
+    object-position: left;
     object-fit: contain;
   }
   .version {
