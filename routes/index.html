@@ -156,7 +156,7 @@
 
 <script>
   import Layout from './_components/Layout.html'
-  import _uniqBy from 'lodash/uniqBy.js'
+  import _sortedUniqBy from 'lodash/sortedUniqBy.js'
   import _pick from 'lodash/pick.js'
 
   let keywordsReady = false
@@ -232,7 +232,7 @@
       },
       lastVersionPkgs (packages) {
         packages.forEach( (pkg, i) => {   console.log('Show ' + i+ ' Package ' + pkg.name + ' version ' + pkg.numVersion) })
-        return _uniqBy(packages, 'name')
+        return _sortedUniqBy(packages, 'name')
       },
       filtered (q, featuredPkgs, lastVersionPkgs) {
         if (!q && featuredPkgs.length) {
