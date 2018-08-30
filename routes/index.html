@@ -190,9 +190,9 @@
       // Calculate numeric version
       const parts = pkg.version.split('.')
       function pad(num, size){ return ('000000000000' + num).substr(-size); }
-      pkg.numVersion = pad(1e9 * (parts[0] || 0), 3) + \
-                       pad(1e6 * (parts[1] || 0), 3) + \
-                       pad(1e3 * (parts[2] || 0), 3) + \
+      pkg.numVersion = pad(1e9 * (parts[0] || 0), 3) + 
+                       pad(1e6 * (parts[1] || 0), 3) + 
+                       pad(1e3 * (parts[2] || 0), 3) + 
                        pad((parts[3] || 0), 3);
       return pkg
     })
