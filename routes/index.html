@@ -230,6 +230,7 @@
         return featured.map(f => packages.find(p => p.name === f)).filter(Boolean)
       },
       lastVersionPkgs (packages) {
+        packages.forEach( (pkg, i) => {   console.log('Show ' + i+ ' Package ' + pkg.name + ' version ' + pkg.numVersion) })
         return _uniqBy(packages, 'name')
       },
       filtered (q, featuredPkgs, lastVersionPkgs) {
