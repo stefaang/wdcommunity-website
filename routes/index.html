@@ -197,7 +197,7 @@
       return pkg
     })
       // Sort by name alphabetically and by version from high to low
-      .sort((a, b) => a.name.localeCompare(b.name) || b.numVersion > a.numVersion)
+      .sort((a, b) => a.name.localeCompare(b.name) || b.numVersion.localeCompare(a.numVersion))
   }
 
   export default {
