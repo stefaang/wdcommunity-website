@@ -190,11 +190,13 @@
       // Calculate numeric version
       const parts = pkg.version.split('.')
       pkg.numVersion = 1e8 * (parts[0] || 0) + 1e6 * (parts[1] || 0) + 1e4 * (parts[2] || 0) + (parts[3] || 0)
-      console.log('Package ' + pkg.name + ' version ' + pkg.numVersion)
       return pkg
     })
       // Sort by name alphabetically and by version from high to low
       .sort((a, b) => a.name.localeCompare(b.name) || b.version > a.version)
+      .map(tag => { 
+        console.log('Package ' + pkg.name + ' version ' + pkg.numVersion 
+     })
   }
 
   export default {
