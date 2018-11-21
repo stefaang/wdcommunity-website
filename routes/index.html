@@ -164,7 +164,9 @@
   async function fetchPackageList (fetch) {
     const res = await fetch('https://api.github.com/repos/WDCommunity/wdpksrc/releases')
     const tags = await res.json()
-    const external_pkgs = await fetch('./external_pkgs.json')
+    
+    const res2 = await fetch('./external_pkgs.json')
+    const external_pkgs = res2.json()
     
     return tags.map(tag => {
       const pkg = {
