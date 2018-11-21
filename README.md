@@ -1,5 +1,5 @@
-# Check it at https://wdcommunity.com
-
+A simple website to serve packages from https://github.com/WDCommunity/wdpksrc ...
+See https://www.wdcommunity.com
 
 ```bash
 # Check for errors in packages
