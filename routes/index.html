@@ -166,7 +166,7 @@
     const tags = await res.json()
     
     const res2 = await fetch('./external_pkgs.json')
-    const external_pkgs = res2.json()
+    const external_pkgs = await res2.json()
     
     return tags.map(tag => {
       const pkg = {
