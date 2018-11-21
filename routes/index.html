@@ -164,6 +164,8 @@
   async function fetchPackageList (fetch) {
     const res = await fetch('https://api.github.com/repos/WDCommunity/wdpksrc/releases')
     const tags = await res.json()
+    const external_pkgs = await fetch('external_pkgs.json')
+    
     return tags.map(tag => {
       const pkg = {
         assets: tag.assets && tag.assets.map(a => _pick(a, ['browser_download_url', 'name', 'size'])),
@@ -196,6 +198,8 @@
                        pad((parts[3] || 0), 3);
       return pkg
     })
+      // Add the hardcoded packages, maintained outside of wdpksrc
+      .concat(external_pkgs)
       // Sort by name alphabetically and by version from high to low
       .sort((a, b) => a.name.localeCompare(b.name) || b.numVersion.localeCompare(a.numVersion))
   }
