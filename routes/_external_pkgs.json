@@ -1,5 +1,5 @@
 {
- "pkgs" = [
+ "pkgs": [
   {
     "name": "Emby",     
     "description": "Media Player",
@@ -21,4 +21,5 @@
     "image": "none",
     "website": "https://tv-mosaic.com/en/"
   },
-]}
+ ]
+}
