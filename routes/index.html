@@ -158,16 +158,14 @@
   import Layout from './_components/Layout.html'
   import _sortedUniqBy from 'lodash/sortedUniqBy.js'
   import _pick from 'lodash/pick.js'
-
+  import external_pkgs from './_external_pkgs.json'
+  
   let keywordsReady = false
 
   async function fetchPackageList (fetch) {
     const res = await fetch('https://api.github.com/repos/WDCommunity/wdpksrc/releases')
     const tags = await res.json()
-    
-    const res2 = await fetch('./assets/external_pkgs.json')
-    const external_pkgs = await res2.json()
-    
+        
     return tags.map(tag => {
       const pkg = {
         assets: tag.assets && tag.assets.map(a => _pick(a, ['browser_download_url', 'name', 'size'])),
@@ -230,7 +228,8 @@
         ],
         featured: ['tautulli', 'docker'],
         q: '',
-        packages: []
+        packages: external_packages,
+        external_packages: external_packages
       }
     },
     computed: {
