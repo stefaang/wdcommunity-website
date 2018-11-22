@@ -200,7 +200,7 @@
       return pkg
     })
       // Add the hardcoded packages, maintained outside of wdpksrc
-      .concat(external_pkgs)
+      .concat(external_pkgs || [])
       // Sort by name alphabetically and by version from high to low
       .sort((a, b) => a.name.localeCompare(b.name) || b.numVersion.localeCompare(a.numVersion))
   }
@@ -228,8 +228,8 @@
         ],
         featured: ['tautulli', 'docker'],
         q: '',
-        packages: external_packages,
-        external_packages: external_packages
+        packages: external_pkgs,
+        external_pkgs: external_pkgs
       }
     },
     computed: {
