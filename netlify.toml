@@ -1,6 +1,0 @@
-[Settings]
-ID = "wdcommunity"
-
-[build]
-command = "yarn export" 
-publish = "export"
