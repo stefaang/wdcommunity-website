@@ -1,17 +1,14 @@
-# Check it at https://wdcommunity.com
+# Default starter for Gridsome
 
+This is the project you get when you run `gridsome create new-project`.
 
-```bash
-# Check for errors in packages
-yarn verify
+### 1. Install Gridsome CLI tool if you don't have
 
-# Start local dev server
-yarn dev
+`npm install --global @gridsome/cli`
 
-# Deploy on Netlify
-npx netlify deploy
+### 2. Create a Gridsome project
 
-# Deploy on now.sh
-npx now
-```
-
+1. `gridsome create my-gridsome-site` to install default starter
+2. `cd my-gridsome-site` to open the folder
+3. `gridsome develop` to start a local dev server at `http://localhost:8080`
+4. Happy coding 🎉🙌

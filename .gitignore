@@ -1,9 +1,8 @@
+*.log
+.cache
 .DS_Store
+src/.temp
 node_modules
-.sapper
-yarn-error.log
-cypress/screenshots
-templates/.*
-export
-build
-app/manifest
+dist
+.env
+.env.*
